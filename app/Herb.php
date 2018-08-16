@@ -10,7 +10,7 @@ class Herb extends Model
 {
 
 
-    public $fillable = ['name','from','to','destination','purpose','financing','advances','description'];
+    public $fillable = ['name','description','appiliance','notes'];
 
     public function users(){
     	return $this->belongsToMany('App\Herb');
