@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
+use App\Role;
+use App\Permission;
 
 class RolesTableSeeder extends Seeder
 {
@@ -13,21 +16,7 @@ class RolesTableSeeder extends Seeder
     public function run()
     {
         
-
         \DB::table('roles')->delete();
-        
-        \DB::table('roles')->insert(array (
-            0 => 
-            array (
-                'id' => 1,
-                'name' => 'Admin',
-                'display_name' => 'Administrator',
-                'description' => 'Power user !',
-                'created_at' => '2018-03-09 18:30:54',
-                'updated_at' => '2018-03-09 18:30:54',
-            ),
-        ));
-        
-        
+
     }
 }

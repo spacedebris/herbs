@@ -26,7 +26,7 @@ Route::group(['middleware' => ['auth']], function(){
 	Route::get('roles',[
 		'as'=>'roles.index',
 		'uses'=>'RoleController@index',
-		/*'middleware' => ['permission:admin|role-list|role-create|role-edit|role-delete']*/
+		'middleware' => ['permission:admin|role-list|role-create|role-edit|role-delete']
 	]);
 	Route::get('roles/create',[
 		'as'=>'roles.create',
