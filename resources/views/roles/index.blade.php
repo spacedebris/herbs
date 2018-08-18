@@ -9,7 +9,7 @@
 	        <div class="pull-right">
 	        	@role('admin')
 	            <a class="btn btn-success" href="{{ route('roles.create') }}">Stwórz nową rolę</a>
-	            @role
+	            @endrole
 	        </div>
 	    </div>
 	</div>
