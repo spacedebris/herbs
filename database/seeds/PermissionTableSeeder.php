@@ -13,6 +13,8 @@ class PermissionTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('permissions')->delete();
+
         $permission = [
         
         [

@@ -27,37 +27,37 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Adres:</strong>
-                {{ $user->profiles['address'] }}
+                {{ $profile->address }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Kod pocztowy:</strong>
-                {{ $user->profiles['postalcode'] }}
+                {{ $profile->postalcode }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Miasto:</strong>
-                {{ $user->profiles['city'] }}
+                {{ $profile->city }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Telefon:</strong>
-                {{ $user->profiles['telephone'] }}
+                {{ $profile->telephone }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Stanowisko:</strong>
-                {{ $user->profiles['position'] }}
+                {{ $profile->position }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Jednostka:</strong>
-                {{ $user->profiles['unit'] }}
+                {{ $profile->unit }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

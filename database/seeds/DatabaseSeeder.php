@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         /*$this->call(RoleUserTableSeeder::class);*/
         
         DB::table('users')->delete();
-
+        DB::table('roles')->delete();
         //1) Create Admin Role
 
         $role = ['name' => 'admin', 'display_name' => 'Admin', 'description' => 'Full Permission'];
@@ -46,5 +46,6 @@ class DatabaseSeeder extends Seeder
         $user->attachRole($role);
 
         
+        $this->call(ProfilesTableSeeder::class);
     }
 }

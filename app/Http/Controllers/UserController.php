@@ -53,6 +53,7 @@ class UserController extends Controller
         $input['password'] = Hash::make($input['password']);
 
         $user = User::create($input);
+
         foreach ($request->input('roles') as $key => $value) {
             $user->attachRole($value);
         }
@@ -72,8 +73,8 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        $address = $user->profiles;
-        return view('users.show',compact('user','address'));
+        $profile = $user->profile;
+        return view('users.show',compact('user', 'profile'));
     }
 
 
