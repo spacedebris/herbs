@@ -46,6 +46,6 @@ class DatabaseSeeder extends Seeder
         $user->attachRole($role);
 
         
-        $this->call(ProfilesTableSeeder::class);
+        //$this->call(ProfilesTableSeeder::class);
     }
 }

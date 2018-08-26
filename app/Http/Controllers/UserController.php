@@ -27,7 +27,9 @@ class UserController extends Controller
      */
     public function create()
     {
+        
         $roles = Role::pluck('display_name','id');
+
         return view('users.create',compact('roles'));
     }
 
@@ -53,6 +55,9 @@ class UserController extends Controller
         $input['password'] = Hash::make($input['password']);
 
         $user = User::create($input);
+        $profile = new Profile();
+
+        $user->profile()->save($profile); // save new instance with empty user details
 
         foreach ($request->input('roles') as $key => $value) {
             $user->attachRole($value);
@@ -73,7 +78,8 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        $profile = $user->profile;
+        $profile = $user->profile();
+        \Debugbar::info($user);
         return view('users.show',compact('user', 'profile'));
     }
 
@@ -89,10 +95,10 @@ class UserController extends Controller
         $user = User::find($id);
         $roles = Role::pluck('display_name','id');
         $userRole = $user->roles->pluck('id','id')->toArray();
-        $address = $user->profiles;
-        \Debugbar::info(compact('user','roles','userRole', 'address'));  
+        $profile = $user->profile;
+        \Debugbar::info(compact('user','roles','userRole', 'profile'));  
 
-        return view('users.edit',compact('user','roles','userRole', 'address'));
+        return view('users.edit',compact('user','roles','userRole', 'profile'));
     }
 
 

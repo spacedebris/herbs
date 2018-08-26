@@ -15,7 +15,7 @@
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Imie i nazwisko:</strong>
-                {{ $user->name }}
+                {{ $user['name'] }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -27,37 +27,37 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Adres:</strong>
-                {{ $profile->address }}
+                {{-- {{ $user->$profile()}} --}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Kod pocztowy:</strong>
-                {{ $profile->postalcode }}
+                {{-- {{ $profile->postalcode }} --}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Miasto:</strong>
-                {{ $profile->city }}
+                {{-- {{ $profile->city }} --}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Telefon:</strong>
-                {{ $profile->telephone }}
+                {{-- {{ $profile->telephone }} --}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Stanowisko:</strong>
-                {{ $profile->position }}
+                {{-- {{ $profile->position }} --}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Jednostka:</strong>
-                {{ $profile->unit }}
+                {{-- {{ $profile->unit }} --}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
