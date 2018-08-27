@@ -55,8 +55,8 @@ class UserController extends Controller
         $input['password'] = Hash::make($input['password']);
 
         $user = User::create($input);
+        
         $profile = new Profile();
-
         $user->profile()->save($profile); // save new instance with empty user details
 
         foreach ($request->input('roles') as $key => $value) {
@@ -95,8 +95,7 @@ class UserController extends Controller
         $user = User::find($id);
         $roles = Role::pluck('display_name','id');
         $userRole = $user->roles->pluck('id','id')->toArray();
-        $profile = $user->profile;
-        \Debugbar::info(compact('user','roles','userRole', 'profile'));  
+        $profile = $user->profile; 
 
         return view('users.edit',compact('user','roles','userRole', 'profile'));
     }
@@ -129,7 +128,7 @@ class UserController extends Controller
         \Debugbar::info($input);
         $user = User::find($id);
         $user->update($input);
-
+        $user->profile->update($input);
 
         DB::table('role_user')->where('user_id',$id)->delete();
 
